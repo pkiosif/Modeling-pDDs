@@ -28,28 +28,28 @@ but they **DO NOT** refer to the ternary constraints mentioned in the paper.
 
 **Note**: The -Xms1g and -Xmx30g flags are not mandatory.
 
-### 1. **Ternary Model (M_t) with ChocoSolver**
+### 1. **Ternary Model (M<sub>t</sub>) with ChocoSolver**
    - **Lexicographic Variable/Value Ordering**:  
      `java -Xms1g -Xmx30g -jar ./ChocoSolver/ChocoSolver.jar [problem_filepath] pDDTernary lexico 0`
    - **Default Ordering**:  
      `java -Xms1g -Xmx30g -jar ./ChocoSolver/ChocoSolver.jar [problem_filepath] pDDTernary default 0`
 
-### 2. **Global Model (M_g) with ChocoSolver**
+### 2. **Global Model (M<sub>g</sub>) with ChocoSolver**
    - **Lexicographic Variable/Value Ordering**:  
      `java -Xms1g -Xmx30g -jar ./ChocoSolver/ChocoSolver.jar [problem_filepath] pDD lexico 0`
    - **Default Ordering**:  
      `java -Xms1g -Xmx30g -jar ./ChocoSolver/ChocoSolver.jar [problem_filepath] pDD default 0`
 
-### 3. **Binary Model (M_b) with ChocoSolver**
+### 3. **Binary Model (M<sub>b</sub>) with ChocoSolver**
    - **Lexicographic Variable/Value Ordering**:  
      `java -Xms1g -Xmx30g -jar ./ChocoSolver/ChocoSolver.jar [problem_filepath] pDDBinary lexico 0`
    - **Default Ordering**:  
      `java -Xms1g -Xmx30g -jar ./ChocoSolver/ChocoSolver.jar [problem_filepath] pDDBinary default 0`
 
-### 4. **Global Model (M_g) with CP Optimizer**
+### 4. **Global Model (M<sub>g</sub>) with CP Optimizer**
    - Run using the command:  
      `python3 cpo_element.py -f [problem_filepath]`
 
-### 5. **Global Model (M_g) with OR-Tools CP-SAT**
+### 5. **Global Model (M<sub>g</sub>) with OR-Tools CP-SAT**
    - Run using the command:  
      `python3 ort_element.py -f [problem_filepath]`
