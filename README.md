@@ -11,7 +11,7 @@ This repository contains the code and benchmarks for solving the pDD problem, wh
 
 ## Running the Models
 
-###Note: The -Xms1g and -Xmx30g flags are not mandatory.
+### Note: The -Xms1g and -Xmx30g flags are not mandatory.
 
 ### 1. **Ternary Model (M_t) with ChocoSolver**
    - **Lexicographic Variable/Value Ordering**:  
