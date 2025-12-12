@@ -135,7 +135,8 @@ public class Main {
         );
             solver.setSearch(orderingStrategy);
         }else{
-            System.out.println("Using default var/val ordering.");
+            orderingStrategy = domOverWDegSearch(F_vars);
+            solver.setSearch(orderingStrategy);
         }
 
 
@@ -210,7 +211,8 @@ public class Main {
             solver.setSearch(stratF, stratMinDist);
 
         }else{
-            System.out.println("Using default var/val ordering.");
+            stratMinDist = Search.intVarSearch(minDist);
+            solver.setSearch(domOverWDegSearch(F_vars), stratMinDist);
         }
 
         if (restartOnSol) {
@@ -273,7 +275,6 @@ public class Main {
                     F_vars
             );
         }else{
-            System.out.println("Using default var/val ordering.");
             orderingStrategy = domOverWDegSearch(F_vars);
         }
 

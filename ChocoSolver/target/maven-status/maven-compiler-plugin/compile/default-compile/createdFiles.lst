@@ -1,2 +1,11 @@
+org\mysearch\constraints\PropDistanceGT_OBJ_AC3_v2_BIN.class
+org\mysearch\constraints\PropDistanceGT_OBJ_AC3_v2.class
+org\mysearch\util\SharedBest.class
+org\mysearch\util\DummyCause.class
 org\mysearch\constraints\DistanceGT.class
-org\mysearch\strategy\StrategyWrapperPDDSimple.class
+org\mysearch\strategy\StrategyWrapperPDDSimpleBIN.class
+org\mysearch\constraints\PropDistanceGT_AC3_v2.class
+org\mysearch\util\DataReader$DistanceData.class
+org\mysearch\util\DataReader.class
+org\mysearch\Main.class
+org\mysearch\strategy\PruneDecision.class
