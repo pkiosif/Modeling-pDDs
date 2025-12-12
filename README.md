@@ -20,7 +20,7 @@ The actual definition of the **DistanceGT** constraints exists in the **Distance
 - DistanceGT(IntVar F1, IntVar F2, SharedBest minDist, int[][] dist, int d_lb)
 - DistanceGT(IntVar F1, IntVar F2, int[][] dist, int d_lb)
 
-but they **DO NOT** implement the ternary constraints mentioned in the paper.
+but they **DO NOT** refer to the ternary constraints mentioned in the paper.
 
 
 
