@@ -9,6 +9,18 @@ This repository contains the code and benchmarks for solving the pDD problem, wh
 - **OR-Tools CP-SAT**: Includes the (M_g) model for the pDD.
 - **ChocoSolver**: Contains the different models (M_g, M_b, M_t) for the pDD.
 
+## DistanceGT Propagator
+### The DistanceGt propagator implmementation can be found in ChocoSolver/src/main/java/org/mysearch/constraints/PropDistanceGT_v2.java
+
+### The actual definition of the DistanceGT constraints exists in the DistanceGT.java class and it is: DistanceGT(IntVar F1, IntVar F2, IntVar minDist, int[][] dist, int d_lb)
+### Note that the DistanceGT.java class contains two more definitions:
+- DistanceGT(IntVar F1, IntVar F2, SharedBest minDist, int[][] dist, int d_lb)
+- DistanceGT(IntVar F1, IntVar F2, int[][] dist, int d_lb)
+
+but they **do not** implement to the ternary constraints mentioned in the paper.
+
+
+
 ## Running the Models
 
 ### Note: The -Xms1g and -Xmx30g flags are not mandatory.
