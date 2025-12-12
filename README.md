@@ -12,12 +12,12 @@ This repository contains the code and benchmarks for solving the pDD problem, wh
 ## DistanceGT Propagator
 ### The DistanceGT propagator implementation can be found in ChocoSolver/src/main/java/org/mysearch/constraints/PropDistanceGT_v2.java
 
-### The actual definition of the DistanceGT constraints exists in the DistanceGT.java class and it is: DistanceGT(IntVar F1, IntVar F2, IntVar minDist, int[][] dist, int d_lb)
-### Note that the DistanceGT.java class contains two more definitions:
+The actual definition of the **DistanceGT** constraints exists in the **DistanceGT.java** class and it is: DistanceGT(IntVar F1, IntVar F2, IntVar minDist, int[][] dist, int d_lb)
+**Note** that the DistanceGT.java class contains two more definitions:
 - DistanceGT(IntVar F1, IntVar F2, SharedBest minDist, int[][] dist, int d_lb)
 - DistanceGT(IntVar F1, IntVar F2, int[][] dist, int d_lb)
 
-### but they **DO NOT** implement the ternary constraints mentioned in the paper.
+but they **DO NOT** implement the ternary constraints mentioned in the paper.
 
 
 
