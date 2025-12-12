@@ -1,6 +1,6 @@
 # pDD Problem Code and Benchmarks
 
-This repository contains the code and benchmarks for solving the pDD problem, which accompanies the paper titled **"Modeling the pid-spersion problem with distance constraints"**.
+This repository contains the code and benchmarks for solving the pDD problem, which accompanies the paper titled **"Modeling the p-dispersion problem with distance constraints"**.
 
 ## Folder Structure
 
