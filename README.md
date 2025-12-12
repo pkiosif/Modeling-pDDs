@@ -10,7 +10,7 @@ This repository contains the code and benchmarks for solving the pDD problem, wh
 - **ChocoSolver**: Contains the different models (M<sub>g</sub>, M<sub>b</sub>, M<sub>t</sub>) for the pDD.
 
 ## DistanceGT Propagator
-### The DistanceGT propagator implementation can be found in ChocoSolver/src/main/java/org/mysearch/constraints/PropDistanceGT_v2.java
+ The **DistanceGT** **propagator** implementation can be found in **ChocoSolver/src/main/java/org/mysearch/constraints/PropDistanceGT_v2.java**
 
 The actual definition of the **DistanceGT** constraints exists in the **DistanceGT.java** class and it is: DistanceGT(IntVar F1, IntVar F2, IntVar minDist, int[][] dist, int d_lb)
 **Note** that the DistanceGT.java class contains two more definitions:
