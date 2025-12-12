@@ -26,7 +26,7 @@ but they **DO NOT** refer to the ternary constraints mentioned in the paper.
 
 ## Running the Models
 
-### Note: The -Xms1g and -Xmx30g flags are not mandatory.
+**Note**: The -Xms1g and -Xmx30g flags are not mandatory.
 
 ### 1. **Ternary Model (M_t) with ChocoSolver**
    - **Lexicographic Variable/Value Ordering**:  
