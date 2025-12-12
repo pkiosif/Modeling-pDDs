@@ -16,7 +16,7 @@ The actual definition of the **DistanceGT** constraints exists in the **Distance
 
 **DistanceGT(IntVar F1, IntVar F2, IntVar minDist, int[][] dist, int d_lb)**
 
-**Note** that the DistanceGT.java class contains two more definitions:
+**! Note** that the DistanceGT.java class contains two more definitions:
 - DistanceGT(IntVar F1, IntVar F2, SharedBest minDist, int[][] dist, int d_lb)
 - DistanceGT(IntVar F1, IntVar F2, int[][] dist, int d_lb)
 
