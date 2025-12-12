@@ -17,7 +17,7 @@ This repository contains the code and benchmarks for solving the pDD problem, wh
 - DistanceGT(IntVar F1, IntVar F2, SharedBest minDist, int[][] dist, int d_lb)
 - DistanceGT(IntVar F1, IntVar F2, int[][] dist, int d_lb)
 
-### but they **do not** implement to the ternary constraints mentioned in the paper.
+### but they **DO NOT** implement to the ternary constraints mentioned in the paper.
 
 
 
