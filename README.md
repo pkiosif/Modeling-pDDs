@@ -5,9 +5,9 @@ This repository contains the code and benchmarks for solving the pDD problem, wh
 ## Folder Structure
 
 - **Benchmarks**: Contains various pDD classes of different sizes. There are three categories of problems: MDPLIB, GRID and BINS problem classes.
-- **CP Optimizer**: Includes the (M_g) model for the pDD.
-- **OR-Tools CP-SAT**: Includes the (M_g) model for the pDD.
-- **ChocoSolver**: Contains the different models (M_g, M_b, M_t) for the pDD.
+- **CP Optimizer**: Includes the (M<sub>g</sub>) model for the pDD.
+- **OR-Tools CP-SAT**: Includes the (M<sub>g</sub>) model for the pDD.
+- **ChocoSolver**: Contains the different models (M<sub>g</sub>, M<sub>b</sub>, M<sub>t</sub>) for the pDD.
 
 ## DistanceGT Propagator
 ### The DistanceGT propagator implementation can be found in ChocoSolver/src/main/java/org/mysearch/constraints/PropDistanceGT_v2.java
