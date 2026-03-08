@@ -1,0 +1,198 @@
+[warn] D:\OscaR_Solver\oscar-main\src\main\scala\oscar\cp\constraints\ResourceCostAllDifferent.scala:37:30: Implicit definition should have explicit type (inferred oscar.cp.core.CPStore)
+[warn]   private[this] implicit val context = s
+[warn]                              ^
+[warn] D:\OscaR_Solver\oscar-main\src\main\scala\oscar\cp\constraints\nooverlap\util\OptionalIntervalDomain.scala:8:16: Implicit definition should have explicit type (inferred oscar.cp.core.CPStore)
+[warn]   implicit val solver = start.store
+[warn]                ^
+[warn] D:\OscaR_Solver\oscar-main\src\main\scala\oscar\cp\core\Constraint.scala:31:16: Implicit definition should have explicit type (inferred oscar.cp.core.Constraint)
+[warn]   implicit val thisConstraint = this
+[warn]                ^
+[warn] D:\OscaR_Solver\oscar-main\src\main\scala\oscar\cp\examples\MLA.scala:41:15: Implicit definition should have explicit type (inferred oscar.cp.core.CPSolver)
+[warn] 	implicit val cp = CPSolver()
+[warn] 	             ^
+[warn] D:\OscaR_Solver\oscar-main\src\main\scala\oscar\cp\examples\ProductMatrixTSP.scala:22:16: Implicit definition should have explicit type (inferred oscar.cp.core.CPSolver)
+[warn]   implicit val solver = CPSolver()
+[warn]                ^
+[warn] D:\OscaR_Solver\oscar-main\src\main\scala\oscar\cp\examples\QueensReplay.scala:12:16: Implicit definition should have explicit type (inferred oscar.cp.core.CPSolver)
+[warn]   implicit val cp = CPSolver()
+[warn]                ^
+[warn] D:\OscaR_Solver\oscar-main\src\main\scala\oscar\cp\examples\multiobjective\BiKnapsack.scala:48:16: Implicit definition should have explicit type (inferred oscar.cp.core.CPSolver)
+[warn]   implicit val cp = CPSolver()
+[warn]                ^
+[warn] D:\OscaR_Solver\oscar-main\src\main\scala\oscar\cp\examples\multiobjective\BiKnapsackLNS.scala:48:16: Implicit definition should have explicit type (inferred oscar.cp.core.CPSolver)
+[warn]   implicit val cp = CPSolver()
+[warn]                ^
+[warn] D:\OscaR_Solver\oscar-main\src\main\scala\oscar\cp\examples\multiobjective\BiQuadraticAssignment.scala:54:16: Implicit definition should have explicit type (inferred oscar.cp.core.CPSolver)
+[warn]   implicit val cp = CPSolver()
+[warn]                ^
+[warn] D:\OscaR_Solver\oscar-main\src\main\scala\oscar\cp\examples\multiobjective\BiTSP.scala:41:16: Implicit definition should have explicit type (inferred oscar.cp.core.CPSolver)
+[warn]   implicit val cp = new CPSolver()
+[warn]                ^
+[warn] D:\OscaR_Solver\oscar-main\src\main\scala\oscar\cp\examples\scheduling\DoubleReservoirShop.scala:37:16: Implicit definition should have explicit type (inferred oscar.cp.core.CPSolver)
+[warn]   implicit val cp = CPSolver()
+[warn]                ^
+[warn] D:\OscaR_Solver\oscar-main\src\main\scala\oscar\cp\examples\scheduling\JobShop.scala:76:16: Implicit definition should have explicit type (inferred oscar.cp.core.CPSolver)
+[warn]   implicit val cp = CPSolver()
+[warn]                ^
+[warn] D:\OscaR_Solver\oscar-main\src\main\scala\oscar\cp\examples\scheduling\RCPSP.scala:38:16: Implicit definition should have explicit type (inferred oscar.cp.core.CPSolver)
+[warn]   implicit val cp = CPSolver()
+[warn]                ^
+[warn] D:\OscaR_Solver\oscar-main\src\main\scala\oscar\cp\examples\scheduling\SingleReservoirShop.scala:36:16: Implicit definition should have explicit type (inferred oscar.cp.core.CPSolver)
+[warn]   implicit val cp = CPSolver()
+[warn]                ^
+[warn] D:\OscaR_Solver\oscar-main\src\main\scala\oscar\cp\modeling\ElementBuilder.scala:39:16: Implicit definition should have explicit type (inferred oscar.cp.modeling.ElementBuilder.ElementIntMatrixConstraintBuilderLine)
+[warn]   implicit def matricIntToElement(matrix: Array[Array[Int]]) = new ElementIntMatrixConstraintBuilderLine(matrix)
+[warn]                ^
+[warn] D:\OscaR_Solver\oscar-main\src\main\scala\oscar\cp\modeling\ElementBuilder.scala:21:16: Implicit definition should have explicit type (inferred oscar.cp.modeling.ElementBuilder.ArrayIntElementConstraintBuilder)
+[warn]   implicit def arrayIntToElement(array: Array[Int]) = new ArrayIntElementConstraintBuilder(array)
+[warn]                ^
+[warn] D:\OscaR_Solver\oscar-main\src\main\scala\oscar\cp\modeling\ElementBuilder.scala:24:16: Implicit definition should have explicit type (inferred oscar.cp.modeling.ElementBuilder.ArrayCPIntVarElementConstraintBuilder)
+[warn]   implicit def arrayIntVarToElement(array: Array[CPIntVar]) = new ArrayCPIntVarElementConstraintBuilder(array)
+[warn]                ^
+[warn] D:\OscaR_Solver\oscar-main\src\main\scala\oscar\cp\modeling\ElementBuilder.scala:27:16: Implicit definition should have explicit type (inferred oscar.cp.modeling.ElementBuilder.ArrayCPBoolVarElementConstraintBuilder)
+[warn]   implicit def arrayBooleanVarToElement(array: Array[CPBoolVar]) = new ArrayCPBoolVarElementConstraintBuilder(array)
+[warn]                ^
+[warn] D:\OscaR_Solver\oscar-main\src\main\scala\oscar\cp\modeling\ElementBuilder.scala:30:16: Implicit definition should have explicit type (inferred oscar.cp.modeling.ElementBuilder.ArrayIntElementConstraintBuilder)
+[warn]   implicit def seqIntToElement(seq: IndexedSeq[Int]) = new ArrayIntElementConstraintBuilder(seq.toArray)
+[warn]                ^
+[warn] D:\OscaR_Solver\oscar-main\src\main\scala\oscar\cp\modeling\ElementBuilder.scala:33:16: Implicit definition should have explicit type (inferred oscar.cp.modeling.ElementBuilder.ArrayCPIntVarElementConstraintBuilder)
+[warn]   implicit def seqIntVarToElement(seq: IndexedSeq[CPIntVar]) = new ArrayCPIntVarElementConstraintBuilder(seq.toArray)
+[warn]                ^
+[warn] D:\OscaR_Solver\oscar-main\src\main\scala\oscar\cp\modeling\ElementBuilder.scala:36:16: Implicit definition should have explicit type (inferred oscar.cp.modeling.ElementBuilder.ArrayCPBoolVarElementConstraintBuilder)
+[warn]   implicit def seqBooleanVarToElement(seq: IndexedSeq[CPBoolVar]) = new ArrayCPBoolVarElementConstraintBuilder(seq.toArray)
+[warn]                ^
+[warn] D:\OscaR_Solver\oscar-main\src\main\scala\oscar\cp\package.scala:98:16: Implicit definition should have explicit type (inferred Array[Int])
+[warn]   implicit def convert2(vals: IndexedSeq[Int]) = vals.toArray[Int]
+[warn]                ^
+[warn] D:\OscaR_Solver\oscar-main\src\main\scala\oscar\cp\package.scala:99:16: Implicit definition should have explicit type (inferred Array[oscar.cp.package.CPIntVar])
+[warn]   implicit def indexed2Array(x: IndexedSeq[CPIntVar]) = x.toArray[CPIntVar]
+[warn]                ^
+[warn] D:\OscaR_Solver\oscar-main\src\main\scala\oscar\cp\package.scala:100:16: Implicit definition should have explicit type (inferred Array[oscar.cp.package.CPIntVar])
+[warn]   implicit def args2Array(x: CPIntVar*) = x.toArray[CPIntVar]
+[warn]                ^
+[warn] D:\OscaR_Solver\oscar-main\src\main\scala\oscar\cp\package.scala:101:16: Implicit definition should have explicit type (inferred Array[oscar.cp.package.CPBoolVar])
+[warn]   implicit def indexed2ArrayBool(x: IndexedSeq[CPBoolVar]) = x.toArray[CPBoolVar]
+[warn]                ^
+[warn] D:\OscaR_Solver\oscar-main\src\main\scala\oscar\cp\package.scala:102:16: Implicit definition should have explicit type (inferred Array[oscar.cp.package.CPBoolVar])
+[warn]   implicit def args2ArrayBool(x: CPBoolVar*) = x.toArray[CPBoolVar]
+[warn]                ^
+[warn] D:\OscaR_Solver\oscar-main\src\main\scala\oscar\cp\package.scala:105:16: Implicit definition should have explicit type (inferred oscar.cp.package.IterableVarOps)
+[warn]   implicit def arrayVar2IterableVarOps(s: Array[CPIntVar]) = new IterableVarOps(s)
+[warn]                ^
+[warn] D:\OscaR_Solver\oscar-main\src\main\scala\oscar\cp\scheduling\constraints\CumulativeTemplate.scala:77:16: Implicit definition should have explicit type (inferred oscar.cp.core.CPStore)
+[warn]   implicit val store = capacity.store
+[warn]                ^
+[warn] D:\OscaR_Solver\oscar-main\src\main\scala\oscar\cp\scheduling\precedencegraph\PrecedenceGraph.scala:15:30: Implicit definition should have explicit type (inferred oscar.cp.core.CPStore)
+[warn]   implicit private[this] val _cp = starts(0).store
+[warn]                              ^
+[warn] D:\OscaR_Solver\oscar-main\src\main\scala\oscar\cp\scheduling\precedencegraph\branching\DynamicPrecedenceGraphBranchingAllPrecedences.scala:12:30: Implicit definition should have explicit type (inferred oscar.cp.core.CPStore)
+[warn]   implicit private[this] val cp = precGraph.store
+[warn]                              ^
+[warn] D:\OscaR_Solver\oscar-main\src\main\scala\oscar\cp\scheduling\precedencegraph\branching\DynamicPrecedenceGraphBranchingAllPrecedencesAllMachines.scala:14:30: Implicit definition should have explicit type (inferred oscar.cp.core.CPStore)
+[warn]   implicit private[this] val cp = precGraphs(0).store
+[warn]                              ^
+[warn] D:\OscaR_Solver\oscar-main\src\main\scala\oscar\cp\scheduling\precedencegraph\branching\StaticPrecedenceGraphBranching.scala:17:30: Implicit definition should have explicit type (inferred oscar.cp.core.CPStore)
+[warn]   implicit private[this] val cp = starts(0).store
+[warn]                              ^
+[warn] D:\OscaR_Solver\oscar-main\src\main\scala\oscar\ml\pm\examples\fim\DiscriminativeCoverSizeZDCRunner.scala:37:16: Implicit definition should have explicit type (inferred oscar.cp.core.CPSolver)
+[warn]   implicit val cp = CPSolver()
+[warn]                ^
+[warn] D:\OscaR_Solver\oscar-main\src\main\scala\oscar\ml\pm\examples\fim\coverSizeRunner.scala:37:16: Implicit definition should have explicit type (inferred oscar.cp.core.CPSolver)
+[warn]   implicit val cp = CPSolver()
+[warn]                ^
+[warn] D:\OscaR_Solver\oscar-main\src\main\scala\oscar\ml\pm\examples\fim\globalFimRunner.scala:35:16: Implicit definition should have explicit type (inferred oscar.cp.core.CPSolver)
+[warn]   implicit val cp = CPSolver()
+[warn]                ^
+[warn] D:\OscaR_Solver\oscar-main\src\main\scala\oscar\ml\pm\examples\fim\pureFimRunner.scala:40:16: Implicit definition should have explicit type (inferred oscar.cp.core.CPSolver)
+[warn]   implicit val cp = CPSolver()
+[warn]                ^
+[warn] D:\OscaR_Solver\oscar-main\src\main\scala\oscar\algo\branchings\BinaryABS.scala:36:22: method without a parameter list overrides a method with a single empty one
+[warn]   final override def alternatives: Seq[Alternative] = {
+[warn]                      ^
+[warn] D:\OscaR_Solver\oscar-main\src\main\scala\oscar\algo\branchings\BinaryLastConflict.scala:62:22: method without a parameter list overrides a method with a single empty one
+[warn]   final override def alternatives: Seq[Alternative] = {
+[warn]                      ^
+[warn] D:\OscaR_Solver\oscar-main\src\main\scala\oscar\algo\branchings\LCSearchSimplePhaseAssign.scala:58:22: method without a parameter list overrides a method with a single empty one
+[warn]   final override def alternatives: Seq[Alternative] = {
+[warn]                      ^
+[warn] D:\OscaR_Solver\oscar-main\src\main\scala\oscar\algo\branchings\SplitLastConflict.scala:71:22: method without a parameter list overrides a method with a single empty one
+[warn]   final override def alternatives: Seq[Alternative] = {
+[warn]                      ^
+[warn] D:\OscaR_Solver\oscar-main\src\main\scala\oscar\algo\search\Alternatives.scala:43:22: method without a parameter list overrides a method with a single empty one
+[warn]   override final def hasNext: Boolean = i < alternatives.length
+[warn]                      ^
+[warn] D:\OscaR_Solver\oscar-main\src\main\scala\oscar\algo\search\Alternatives.scala:56:22: method without a parameter list overrides a method with a single empty one
+[warn]   override final def hasNext: Boolean = !list.isEmpty
+[warn]                      ^
+[warn] D:\OscaR_Solver\oscar-main\src\main\scala\oscar\algo\search\Alternatives.scala:67:22: method without a parameter list overrides a method with a single empty one
+[warn]   override final def hasNext: Boolean = i < alternatives.length
+[warn]                      ^
+[warn] D:\OscaR_Solver\oscar-main\src\main\scala\oscar\algo\search\Branching.scala:43:18: method without a parameter list overrides a method with a single empty one
+[warn]     override def alternatives = {
+[warn]                  ^
+[warn] D:\OscaR_Solver\oscar-main\src\main\scala\oscar\algo\search\Branching.scala:60:81: method without a parameter list overrides a method with a single empty one
+[warn]   def apply(b: => Seq[Alternative]): Branching = new Branching() { override def alternatives = b }
+[warn]                                                                                 ^
+[warn] D:\OscaR_Solver\oscar-main\src\main\scala\oscar\algo\search\DFSearchNode.scala:76:205: a pure expression does nothing in statement position
+[warn]   def startSubjectTo(nSols: Int = Int.MaxValue, failureLimit: Int = Int.MaxValue, timeLimit: Int = Int.MaxValue, maxDiscrepancy: Int = Int.MaxValue, listener: DFSearchListener = null)(block: => Unit = () => ()): SearchStatistics = {
+[warn]                                                                                                                                                                                                             ^
+[warn] D:\OscaR_Solver\oscar-main\src\main\scala\oscar\algo\search\DiscrepancyBranching.scala:27:22: method without a parameter list overrides a method with a single empty one
+[warn]   final override def alternatives: Seq[Alternative] = {
+[warn]                      ^
+[warn] D:\OscaR_Solver\oscar-main\src\main\scala\oscar\cp\constraints\CPObjectiveUnit.scala:78:7: method without a parameter list overrides a method with a single empty one
+[warn]   def isOptimum: Boolean = (best == bestBound)
+[warn]       ^
+[warn] D:\OscaR_Solver\oscar-main\src\main\scala\oscar\cp\core\domains\SingleBitVectorDomain.scala:261:11: method with a single empty parameter list overrides method without any parameter list
+[warn]       def hasNext(): Boolean = id <= max
+[warn]           ^
+[warn] D:\OscaR_Solver\oscar-main\src\main\scala\oscar\cp\core\variables\CPBoolVarImpl.scala:197:22: method with a single empty parameter list overrides method without any parameter list
+[warn]   final override def constraintTrue(): Constraint = new oscar.cp.constraints.EqCons(this, 1)
+[warn]                      ^
+[warn] D:\OscaR_Solver\oscar-main\src\main\scala\oscar\cp\core\variables\CPBoolVarImpl.scala:199:22: method with a single empty parameter list overrides method without any parameter list
+[warn]   final override def constraintFalse(): Constraint = new oscar.cp.constraints.EqCons(this, 0)
+[warn]                      ^
+[warn] D:\OscaR_Solver\oscar-main\src\main\scala\oscar\cp\core\variables\CPBoolVarNot.scala:118:22: method with a single empty parameter list overrides method without any parameter list
+[warn]   final override def constraintTrue(): Constraint = not.constraintFalse
+[warn]                      ^
+[warn] D:\OscaR_Solver\oscar-main\src\main\scala\oscar\cp\core\variables\CPBoolVarNot.scala:120:22: method with a single empty parameter list overrides method without any parameter list
+[warn]   final override def constraintFalse(): Constraint = not.constraintTrue
+[warn]                      ^
+[warn] D:\OscaR_Solver\oscar-main\src\main\scala\oscar\cp\core\variables\CPSeqVar.scala:151:16: method with a single empty parameter list overrides method without any parameter list
+[warn]   override def iterator(): Iterator[Int] = allMembers.iterator
+[warn]                ^
+[warn] D:\OscaR_Solver\oscar-main\src\main\scala\oscar\cp\nogoods\searches\ConflictOrderingSearch.scala:36:7: method with a single empty parameter list overrides method without any parameter list
+[warn]   def nextDecision(): Decision = {
+[warn]       ^
+[warn] D:\OscaR_Solver\oscar-main\src\main\scala\oscar\cp\nogoods\searches\ConflictOrderingSearchPhase.scala:46:7: method with a single empty parameter list overrides method without any parameter list
+[warn]   def nextDecision(): Decision = {
+[warn]       ^
+[warn] D:\OscaR_Solver\oscar-main\src\main\scala\oscar\cp\nogoods\searches\FailureDirectedSearch.scala:35:22: method with a single empty parameter list overrides method without any parameter list
+[warn]   final override def nextDecision(): Decision = {
+[warn]                      ^
+[warn] D:\OscaR_Solver\oscar-main\src\main\scala\oscar\cp\nogoods\searches\HeuristicNogoodBranching.scala:83:7: method with a single empty parameter list overrides method without any parameter list
+[warn]   def nextDecision(): Decision = {
+[warn]       ^
+[warn] D:\OscaR_Solver\oscar-main\src\main\scala\oscar\cp\nogoods\searches\RandomHeuristicNogoodBranching.scala:94:7: method with a single empty parameter list overrides method without any parameter list
+[warn]   def nextDecision(): Decision = {
+[warn]       ^
+[warn] D:\OscaR_Solver\oscar-main\src\main\scala\oscar\cp\scheduling\constraints\EnergeticReasoning.scala:48:16: method without a parameter list overrides a method with a single empty one
+[warn]   override def propagate: Unit = {
+[warn]                ^
+[warn] D:\OscaR_Solver\oscar-main\src\main\scala\oscar\cp\examples\Steel.scala:41:7: match may not be exhaustive.
+[warn] It would fail on the following input: List(_)
+[warn]       vals_ match {
+[warn]       ^
+[warn] 1 deprecation
+[warn] 2 deprecations (since 2.10.0)
+[warn] 295 deprecations (since 2.13.0)
+[warn] 3 deprecations (since 2.13.2)
+[warn] 245 deprecations (since 2.13.3)
+[warn] 3 deprecations (since 2.13.4)
+[warn] 2 deprecations (since 2.13.7)
+[warn] 551 deprecations in total; re-run with -deprecation for details
+[warn] 40 feature warnings; re-run with -feature for details
+[warn] 70 warnings found
+[info] D:\OscaR_Solver\oscar-main\src\main\java\oscar\cp\constraints\AllDiffAC.java: Some input files use or override a deprecated API.
+[info] D:\OscaR_Solver\oscar-main\src\main\java\oscar\cp\constraints\AllDiffAC.java: Recompile with -Xlint:deprecation for details.
+[info] D:\OscaR_Solver\oscar-main\src\main\java\oscar\algo\MutableIntMap.java: Some input files use unchecked or unsafe operations.
+[info] D:\OscaR_Solver\oscar-main\src\main\java\oscar\algo\MutableIntMap.java: Recompile with -Xlint:unchecked for details.
