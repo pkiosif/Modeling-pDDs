@@ -8,7 +8,9 @@ import org.chocosolver.solver.search.strategy.selectors.values.IntDomainMin;
 import org.chocosolver.solver.search.strategy.selectors.variables.InputOrder;
 import org.chocosolver.solver.search.strategy.strategy.AbstractStrategy;
 import org.chocosolver.solver.variables.IntVar;
+import org.mysearch.constraints.Custom2DElement;
 import org.mysearch.constraints.DistanceGT;
+import org.mysearch.constraints.Prop2DElementGAC;
 import org.mysearch.strategy.*;
 
 import org.mysearch.util.*;
@@ -55,6 +57,8 @@ public class Main {
         TRACK_PM  = hasFlag(args, "--prune-metrics"); // enable with this flag
         boolean restartOnSol = hasFlag(args, "--restart");
         if(restartOnSol) System.out.println("Restarts on solution enabled.");
+        boolean pruningHeuristic = hasFlag(args, "--prune");
+        if(pruningHeuristic) System.out.println("Heuristic pruning is enabled.");
         int solvepDD = 0;
 
 
@@ -65,13 +69,16 @@ public class Main {
         try {
             if (ptype.equals("pDD")){
                 data = DataReader.readDistanceAndConstraints(file, decimalPoints);
-                solvepDDModel(data, ordering, restartOnSol);
+                solvepDDModel(data, ordering, restartOnSol, pruningHeuristic);
             } else if (ptype.equals("pDDTernary")) {
                 data = DataReader.readDistanceAndConstraints(file, decimalPoints);
-                solvepDDTernaryModel(data, ordering, restartOnSol);
+                solvepDDTernaryModel(data, ordering, restartOnSol, pruningHeuristic);
             } else if (ptype.equals("pDDBinary")) {
                 data = DataReader.readDistanceAndConstraints(file, decimalPoints);
                 solvepDDBinaryModel(data, ordering);
+            }else if (ptype.equals("pDDCustom2DElement")) {
+                data = DataReader.readDistanceAndConstraints(file, decimalPoints);
+                solvepDDCustom2DElementModel(data, ordering, restartOnSol);
             }
             else
             {
@@ -84,7 +91,7 @@ public class Main {
 
     }
 
-    private static void solvepDDModel(DataReader.DistanceData data, String ordering, boolean restartOnSol) {
+    private static void solvepDDModel(DataReader.DistanceData data, String ordering, boolean restartOnSol, boolean pruningHeuristic) {
         System.out.println("Model with 1D Element Constraints");
 
         int F = data.facilities;
@@ -133,9 +140,99 @@ public class Main {
                 new IntDomainMin(),
                 F_vars
         );
+            //solver.setSearch(orderingStrategy);
+        }else{
+            orderingStrategy = domOverWDegSearch(F_vars);
+            //solver.setSearch(orderingStrategy);
+        }
+
+        if (pruningHeuristic){
+            HeuristicPruningWrapperPDD pruningStrategy = new HeuristicPruningWrapperPDD(F_vars, distanceMatrix, orderingStrategy);
+            solver.setSearch(pruningStrategy);
+            System.out.println("Pruning Strategy applied successfully.");
+        }
+        else{
+            solver.setSearch(orderingStrategy);
+        }
+
+        if (restartOnSol) {
+            System.out.println("Using restarts on solutions");
+            solver.setRestartOnSolutions();
+        }
+
+        solver.limitTime("3600s");
+
+        Solution sol = new Solution(model);
+        System.out.print("\n");
+        int solindex = 0;
+        long startTime = System.currentTimeMillis();
+        long endTime = 0;
+
+        System.out.println("--Started solving...");
+
+        //solver.showDecisions();
+        solver.showSolutions();
+        while (solver.solve()) {
+            endTime = System.currentTimeMillis();
+            sol.record();
+            solindex++;
+            System.out.println("#" + solindex + "   obj: " + sol.getIntVal(minDist) + "   " + ((endTime - startTime) / 1000) + "s");
+        }
+        System.out.print("\n");
+        solver.printStatistics();
+
+    }
+
+    private static void solvepDDCustom2DElementModel(DataReader.DistanceData data, String ordering, boolean restartOnSol) {
+        System.out.println("Model with 2D Custom Element Constraints");
+
+        int F = data.facilities;
+        int P = data.points;
+        int[] distances = data.flatDistances;
+        int[] dCons = data.flatConstraints;
+
+
+        int[][] distanceMatrix = unflatten(distances, P, P);
+
+
+        Model model = new Model("P-Dispersion with Distance Contraints");
+
+        IntVar[] F_vars = model.intVarArray("F", F, 0, P - 1);
+
+        List<IntVar> FF = new ArrayList<>();
+        int idx = 0;
+        for (int f1 = 0; f1 < F - 1; f1++) {
+            for (int f2 = f1 + 1; f2 < F; f2++) {
+                IntVar ff = model.intVar("FF_" + idx, Arrays.stream(distances).distinct().toArray());
+                FF.add(ff);
+
+                model.post(new Custom2DElement(distanceMatrix, F_vars[f1], F_vars[f2], ff));
+
+                // ff > d_cons[i][j]
+                model.arithm(ff, ">", dCons[f1 * F + f2]).post();
+                idx++;
+            }
+        }
+        // Objective: maximize the minimum distance
+        IntVar minDist = model.intVar("minDist", 0, Arrays.stream(distances).max().getAsInt());
+        model.min(minDist, FF.toArray(new IntVar[0])).post();
+        model.setObjective(Model.MAXIMIZE, minDist);
+
+
+        Solver solver = model.getSolver();
+
+        AbstractStrategy<IntVar> orderingStrategy;
+        if(ordering.equals("lexico")){
+            System.out.println("Using lexico var/val ordering.");
+            orderingStrategy = Search.intVarSearch(
+                    new InputOrder<>(model),
+                    new IntDomainMin(),
+                    F_vars
+            );
             solver.setSearch(orderingStrategy);
         }else{
-            System.out.println("Using default var/val ordering.");
+            orderingStrategy = domOverWDegSearch(F_vars);
+            solver.setSearch(orderingStrategy);
         }
 
 
@@ -167,8 +264,7 @@ public class Main {
 
     }
 
-
-    private static void solvepDDTernaryModel(DataReader.DistanceData data, String ordering, boolean restartOnSol){
+    private static void solvepDDTernaryModel(DataReader.DistanceData data, String ordering, boolean restartOnSol, boolean pruningHeuristic){
         System.out.println("Model with Simple (Ternary) Constraints");
 
         int F = data.facilities;
@@ -207,12 +303,20 @@ public class Main {
             );
 
             stratMinDist = Search.intVarSearch(minDist);
-            solver.setSearch(stratF, stratMinDist);
+            //solver.setSearch(stratF, stratMinDist);
 
         }else{
-            System.out.println("Using default var/val ordering.");
+            stratF = domOverWDegSearch(F_vars);
+            stratMinDist = Search.intVarSearch(minDist);
+            //solver.setSearch(domOverWDegSearch(F_vars), stratMinDist);
         }
-
+        if (pruningHeuristic) {
+            HeuristicPruningWrapperPDD pruningStrategy = new HeuristicPruningWrapperPDD(F_vars, distanceMatrix, stratF);
+            solver.setSearch(pruningStrategy, stratMinDist);
+            System.out.println("Pruning Strategy applied successfully.");
+        } else {
+            solver.setSearch(stratF, stratMinDist);
+        }
         if (restartOnSol) {
             System.out.println("Using restarts on solutions");
             solver.setRestartOnSolutions();
@@ -273,7 +377,6 @@ public class Main {
                     F_vars
             );
         }else{
-            System.out.println("Using default var/val ordering.");
             orderingStrategy = domOverWDegSearch(F_vars);
         }
 
