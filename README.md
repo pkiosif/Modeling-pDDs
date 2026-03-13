@@ -43,43 +43,80 @@ java -Xms1g -Xmx30g -jar ./ChocoSolver/ChocoSolver.jar [problem_filepath] pDDTer
 ```
 
 ### 2. **Element Model (M<sub>el</sub>) with ChocoSolver**
-   - **Lexicographic Variable/Value Ordering**:  
-     `java -Xms1g -Xmx30g -jar ./ChocoSolver/ChocoSolver.jar [problem_filepath] pDD lexico 0`
+   - **Lexicographic Variable/Value Ordering**:
+   
+```  
+java -Xms1g -Xmx30g -jar ./ChocoSolver/ChocoSolver.jar [problem_filepath] pDD lexico 0
+```
+   
    - **Domwdeg Ordering**:  
-     `java -Xms1g -Xmx30g -jar ./ChocoSolver/ChocoSolver.jar [problem_filepath] pDD domwdeg 0`
+``` 
+java -Xms1g -Xmx30g -jar ./ChocoSolver/ChocoSolver.jar [problem_filepath] pDD domwdeg 0
+```
 
 ### 3. **Table Model (M<sub>tb</sub>) with ChocoSolver**
-   - **Lexicographic Variable/Value Ordering**: 
-     `java -Xms1g -Xmx30g -jar ./ChocoSolver/ChocoSolver.jar [problem_filepath] pDDTable2 lexico 0`
+   - **Lexicographic Variable/Value Ordering**:
+
+``` 
+java -Xms1g -Xmx30g -jar ./ChocoSolver/ChocoSolver.jar [problem_filepath] pDDTable2 lexico 0
+```
    - **Domwdeg Ordering**:  
-     `java -Xms1g -Xmx30g -jar ./ChocoSolver/ChocoSolver.jar [problem_filepath] pDDTable2 domwdeg 0`
+
+```
+java -Xms1g -Xmx30g -jar ./ChocoSolver/ChocoSolver.jar [problem_filepath] pDDTable2 domwdeg 0
+```
 
 ### 4. **Binary Model (M<sub>b</sub>) with ChocoSolver**
    - **Lexicographic Variable/Value Ordering**:  
-     `java -Xms1g -Xmx30g -jar ./ChocoSolver/ChocoSolver.jar [problem_filepath] pDDBinary lexico 0`
+
+```
+java -Xms1g -Xmx30g -jar ./ChocoSolver/ChocoSolver.jar [problem_filepath] pDDBinary lexico 0
+```
+
    - **Domwdeg Ordering**:  
-     `java -Xms1g -Xmx30g -jar ./ChocoSolver/ChocoSolver.jar [problem_filepath] pDDBinary domwdeg 0`
+
+```
+java -Xms1g -Xmx30g -jar ./ChocoSolver/ChocoSolver.jar [problem_filepath] pDDBinary domwdeg 0
+```
 
 ### 5. **Element Model (M<sub>el</sub>) with CP Optimizer**
    - Run using the command:  
-     `python3 cpo_element.py -f [problem_filepath]`
+
+```
+python3 cpo_element.py -f [problem_filepath]
+```
 
 ### 6. **Table Model (M<sub>tb</sub>) with CP Optimizer**
    - Run using the command:  
-     `python3 cpo_table.py -f [problem_filepath]`
+
+```
+python3 cpo_table.py -f [problem_filepath]
+```
 
 ### 7. **Element Model (M<sub>el</sub>) with OR-Tools CP-SAT**
    - Run using the command:  
-     `python3 ort_element.py -f [problem_filepath]`
+
+```
+python3 ort_element.py -f [problem_filepath]
+```
 
 ### 8. **Table Model (M<sub>tb</sub>) with OR-Tools CP-SAT**
-   - Run using the command:  
-     `python3 ort_table.py -f [problem_filepath]`
+   - Run using the command:
+
+```  
+python3 ort_table.py -f [problem_filepath]
+```
 
 ### 9. **Element Model (M<sub>el</sub>) with OscaR**
-   - Run using the command:  
-     `java -Xms1g -Xmx30g -jar ./OscaR/oscar-element.jar [problem_filepath] domwdeg`
+   - Run using the command:
+
+```  
+java -Xms1g -Xmx30g -jar ./OscaR/oscar-element.jar [problem_filepath] domwdeg
+```
 
 ### 10. **Table Model (M<sub>tb</sub>) with OscaR**
    - Run using the command:  
-     `java -Xms1g -Xmx30g -jar ./OscaR/oscar-table.jar [problem_filepath] domwdeg`
+
+```
+java -Xms1g -Xmx30g -jar ./OscaR/oscar-table.jar [problem_filepath] domwdeg
+```
