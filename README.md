@@ -32,25 +32,25 @@ but they **DO NOT** refer to the ternary constraints mentioned in the paper.
 ### 1. **Ternary Model (M<sub>t</sub>) with ChocoSolver**
    - **Lexicographic Variable/Value Ordering**:  
      `java -Xms1g -Xmx30g -jar ./ChocoSolver/ChocoSolver.jar [problem_filepath] pDDTernary lexico 0`
-   - **Default Ordering**:  
+   - **Domwdeg Ordering**:  
      `java -Xms1g -Xmx30g -jar ./ChocoSolver/ChocoSolver.jar [problem_filepath] pDDTernary domwdeg 0`
 
 ### 2. **Element Model (M<sub>el</sub>) with ChocoSolver**
    - **Lexicographic Variable/Value Ordering**:  
      `java -Xms1g -Xmx30g -jar ./ChocoSolver/ChocoSolver.jar [problem_filepath] pDD lexico 0`
-   - **Default Ordering**:  
+   - **Domwdeg Ordering**:  
      `java -Xms1g -Xmx30g -jar ./ChocoSolver/ChocoSolver.jar [problem_filepath] pDD domwdeg 0`
 
 ### 3. **Table Model (M<sub>tb</sub>) with ChocoSolver**
    - **Lexicographic Variable/Value Ordering**:  
      `java -Xms1g -Xmx30g -jar ./ChocoSolver/ChocoSolver.jar [problem_filepath] pDDTable2 lexico 0`
-   - **Default Ordering**:  
+   - **Domwdeg Ordering**:  
      `java -Xms1g -Xmx30g -jar ./ChocoSolver/ChocoSolver.jar [problem_filepath] pDDTable2 domwdeg 0`
 
 ### 4. **Binary Model (M<sub>b</sub>) with ChocoSolver**
    - **Lexicographic Variable/Value Ordering**:  
      `java -Xms1g -Xmx30g -jar ./ChocoSolver/ChocoSolver.jar [problem_filepath] pDDBinary lexico 0`
-   - **Default Ordering**:  
+   - **Domwdeg Ordering**:  
      `java -Xms1g -Xmx30g -jar ./ChocoSolver/ChocoSolver.jar [problem_filepath] pDDBinary domwdeg 0`
 
 ### 5. **Element Model (M<sub>el</sub>) with CP Optimizer**
