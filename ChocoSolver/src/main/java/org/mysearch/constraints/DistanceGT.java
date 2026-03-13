@@ -4,7 +4,7 @@ import org.chocosolver.solver.constraints.Constraint;
 import org.chocosolver.solver.variables.IntVar;
 import org.mysearch.util.SharedBest;
 
-/** Convenience wrapper to post PropDistanceGT_AC3. */
+
 
 public final class DistanceGT extends Constraint {
     public DistanceGT(IntVar F1, IntVar F2, IntVar minDist, int[][] dist, int d_lb) {

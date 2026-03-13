@@ -1,7 +1,3 @@
-# cpo_element_simple.py
-# CP Optimizer model (Element + objective) for p-dispersion
-# Reads instance via data_reader.read_distance_and_constraints(filename)
-
 import argparse
 from itertools import combinations
 from typing import Optional, Dict, Any, List
@@ -18,11 +14,8 @@ def solve_instance_with_cpoptimizer_element_obj(
     workers: Optional[int] = None,
     log_verbosity: str = "Normal",
 ) -> Dict[str, Any]:
-    """
-    Reads an instance using data_reader.read_distance_and_constraints(filename),
-    builds the Element+Objective model (solve_with_cp_optimizer_Element_obj style),
-    solves it, and returns a result dict.
-    """
+   
+
     dd = read_distance_and_constraints(filename)
     P: int = dd.points
     FAC: int = dd.facilities
@@ -46,12 +39,12 @@ def solve_instance_with_cpoptimizer_element_obj(
     
     FF = [mdl.integer_var(domain=distinct_distances, name=f"FF_{k}") for k in range(len(pairs))]
 
-    # Link FF[k] == distances[F[f1]*P + F[f2]] and enforce pair-specific distance thresholds
+    
     for k, (f1, f2) in enumerate(pairs):
-        # 1D index into flattened P x P distance table
+        
         idx = F[f1] * P + F[f2]
         mdl.add(FF[k] == element(distances, idx))
-        # Correct indexing into FAC x FAC constraint table:
+        
         mdl.add(FF[k] > d_cons[f1 * FAC + f2])
 
     min_dist = mdl.min(FF)
@@ -96,13 +89,6 @@ def solve_instance_with_cpoptimizer_element_obj(
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="CP model (Element+Objective) for p-dispersion")
     parser.add_argument("-f", "--file", type=str, required=True, help="Path to instance file")
-    parser.add_argument(
-        "-m",
-        "--modelType",
-        type=str,
-        default="1DElement",
-        help='Model type flag to match cpo_simple.py interface (use "1DElement")',
-    )
     parser.add_argument("-t", "--timeLimit", type=float, default=3600.0, help="Time limit in seconds")
     parser.add_argument("-w", "--workers", type=int, default=1, help="Number of workers (threads)")
     parser.add_argument("-v", "--verbosity", type=str, default="Normal", help="Log verbosity (e.g., Normal, Quiet)")
@@ -117,4 +103,4 @@ if __name__ == "__main__":
             workers=args.workers,
             log_verbosity=args.verbosity,
         )
-        # print(res["status"], res["objective"], res["facilities"])
+

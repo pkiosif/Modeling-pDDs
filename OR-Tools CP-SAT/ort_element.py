@@ -1,7 +1,3 @@
-# cpo_element_simple_ortools.py
-# OR-Tools CP-SAT model (Element + objective) for p-dispersion
-# Reads instance via data_reader.read_distance_and_constraints(filename)
-
 import argparse
 from itertools import combinations
 from typing import Optional, Dict, Any, List
@@ -44,16 +40,16 @@ def solve_instance_with_ortools_element_obj(
     else:
         FF_domain = cp_model.Domain.FromIntervals([(0, 0)])
 
-    # Auxiliary: pairwise distances and index into flattened table
+    
     FF = [model.NewIntVarFromDomain(FF_domain, f"FF_{k}") for k in range(len(pairs))]
     I  = [model.NewIntVar(0, P * P - 1, f"I_{k}")  for k in range(len(pairs))]
 
-    # Link FF[k] == distances[F[f1]*P + F[f2]] and enforce pair-specific distance thresholds
+    
     for k, (f1, f2) in enumerate(pairs):
-        # Linearized 2D -> 1D index: I_k = P * F[f1] + F[f2]
+       
         model.Add(I[k] == F[f1] * P + F[f2])
 
-        # Element: FF[k] = distances[I[k]]
+        
         model.AddElement(I[k], distances, FF[k])
 
         
@@ -140,13 +136,6 @@ def solve_instance_with_ortools_element_obj(
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="OR-Tools CP-SAT model (Element+Objective) for p-dispersion")
     parser.add_argument("-f", "--file", type=str, required=True, help="Path to instance file")
-    parser.add_argument(
-        "-m",
-        "--modelType",
-        type=str,
-        default="1DElement",
-        help='Model type flag to match cpo_simple.py interface (use "1DElement")',
-    )
     parser.add_argument("-t", "--timeLimit", type=float, default=3600.0, help="Time limit in seconds")
     parser.add_argument("-w", "--workers", type=int, default=1, help="Number of workers (threads)")
     parser.add_argument("-v", "--verbosity", type=str, default="Normal", help="Log verbosity (e.g., Normal, Quiet)")
@@ -173,4 +162,3 @@ if __name__ == "__main__":
             linearization_level=args.linearization_level,
             probing_level=args.probing_level,
         )
-        # print(res["status"], res["objective"], res["facilities"])

@@ -11,7 +11,6 @@ import java.util.BitSet;
 
 /**
  * Enforces: distanceMatrix[F1][F2] >= d_lb + 1
- * AC-3 style over two vars (F1,F2), plus listening to minDist bound increases.
  * Values of F1, F2 are indices in 0..P-1.
  *
  * Note: Baseline precomputed supports are for GE-threshold baseGE = d_lb + 1.

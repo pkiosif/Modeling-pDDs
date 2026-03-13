@@ -11,7 +11,6 @@ import java.util.BitSet;
 
 /**
  * Enforces: distanceMatrix[F1][F2] >= max(minDist, d_lb + 1)
- * AC-3 style over two vars (F1,F2), plus listening to minDist bound increases.
  * Values of F1, F2 are indices in 0..P-1.
  *
  * Note: Baseline precomputed supports are for GE-threshold baseGE = d_lb + 1.
@@ -59,7 +58,7 @@ public final class PropDistanceGT_v2 extends Propagator<IntVar> {
                     | IntEventType.BOUND.getMask()
                     | IntEventType.INSTANTIATE.getMask();
         } else {
-            // Mainly care about LB increases of minDist; BOUND covers it.
+
             return IntEventType.BOUND.getMask()
                     | IntEventType.INSTANTIATE.getMask();
         }
@@ -80,15 +79,15 @@ public final class PropDistanceGT_v2 extends Propagator<IntVar> {
             // Tighten minDist.UB using this pair
             if (F1.isInstantiated() && F2.isInstantiated()) {
                 int d = distanceMatrix[F1.getValue()][F2.getValue()];
-                // GE semantics ⇒ UB is d (NOT d-1)
+
                 minDist.updateUpperBound(d, this);
             } else {
-                // minDist ≤ max_{a∈Dom(F1), b∈Dom(F2)} dist[a][b]
+
                 int ubPair = maxDistanceOverDomains();
                 minDist.updateUpperBound(ubPair, this);
             }
 
-            // Do NOT passivate here; minDist.LB rises during optimization.
+
         } while (changed);
     }
 
