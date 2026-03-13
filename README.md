@@ -30,10 +30,17 @@ but they **DO NOT** refer to the ternary constraints mentioned in the paper.
 **Note**: The -Xms1g and -Xmx30g flags are not mandatory.
 
 ### 1. **Ternary Model (M<sub>t</sub>) with ChocoSolver**
-   - **Lexicographic Variable/Value Ordering**:  
-     `java -Xms1g -Xmx30g -jar ./ChocoSolver/ChocoSolver.jar [problem_filepath] pDDTernary lexico 0`
+   - **Lexicographic Variable/Value Ordering**: 
+
+    ``` bash 
+     java -Xms1g -Xmx30g -jar ./ChocoSolver/ChocoSolver.jar [problem_filepath] pDDTernary lexico 0
+    ```
+
    - **Domwdeg Ordering**:  
-     `java -Xms1g -Xmx30g -jar ./ChocoSolver/ChocoSolver.jar [problem_filepath] pDDTernary domwdeg 0`
+    
+    ``` bash
+     java -Xms1g -Xmx30g -jar ./ChocoSolver/ChocoSolver.jar [problem_filepath] pDDTernary domwdeg 0
+     ```
 
 ### 2. **Element Model (M<sub>el</sub>) with ChocoSolver**
    - **Lexicographic Variable/Value Ordering**:  
@@ -42,11 +49,8 @@ but they **DO NOT** refer to the ternary constraints mentioned in the paper.
      `java -Xms1g -Xmx30g -jar ./ChocoSolver/ChocoSolver.jar [problem_filepath] pDD domwdeg 0`
 
 ### 3. **Table Model (M<sub>tb</sub>) with ChocoSolver**
-   - **Lexicographic Variable/Value Ordering**:
-
-   ```bash  
-     java -Xms1g -Xmx30g -jar ./ChocoSolver/ChocoSolver.jar [problem_filepath] pDDTable2 lexico 0
-    ```
+   - **Lexicographic Variable/Value Ordering**: 
+     `java -Xms1g -Xmx30g -jar ./ChocoSolver/ChocoSolver.jar [problem_filepath] pDDTable2 lexico 0`
    - **Domwdeg Ordering**:  
      `java -Xms1g -Xmx30g -jar ./ChocoSolver/ChocoSolver.jar [problem_filepath] pDDTable2 domwdeg 0`
 
