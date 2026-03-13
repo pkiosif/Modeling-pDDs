@@ -32,13 +32,13 @@ but they **DO NOT** refer to the ternary constraints mentioned in the paper.
 ### 1. **Ternary Model (M<sub>t</sub>) with ChocoSolver**
    - **Lexicographic Variable/Value Ordering**: 
 
-    ``` bash 
+    ```
      java -Xms1g -Xmx30g -jar ./ChocoSolver/ChocoSolver.jar [problem_filepath] pDDTernary lexico 0
     ```
 
    - **Domwdeg Ordering**:  
     
-    ``` bash
+    ```
      java -Xms1g -Xmx30g -jar ./ChocoSolver/ChocoSolver.jar [problem_filepath] pDDTernary domwdeg 0
      ```
 
