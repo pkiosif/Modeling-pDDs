@@ -42,8 +42,10 @@ but they **DO NOT** refer to the ternary constraints mentioned in the paper.
      `java -Xms1g -Xmx30g -jar ./ChocoSolver/ChocoSolver.jar [problem_filepath] pDD domwdeg 0`
 
 ### 3. **Table Model (M<sub>tb</sub>) with ChocoSolver**
-   - **Lexicographic Variable/Value Ordering**:  
-     `java -Xms1g -Xmx30g -jar ./ChocoSolver/ChocoSolver.jar [problem_filepath] pDDTable2 lexico 0`
+   - **Lexicographic Variable/Value Ordering**:
+   ```bash  
+     java -Xms1g -Xmx30g -jar ./ChocoSolver/ChocoSolver.jar [problem_filepath] pDDTable2 lexico 0
+    ```
    - **Domwdeg Ordering**:  
      `java -Xms1g -Xmx30g -jar ./ChocoSolver/ChocoSolver.jar [problem_filepath] pDDTable2 domwdeg 0`
 
